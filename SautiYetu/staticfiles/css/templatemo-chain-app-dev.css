@@ -1938,6 +1938,44 @@ a.btn_red {
 
 
 
+/* Logo container */
+.logo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 3px;
+}
+
+/* Logo image */
+.logo img {
+  max-width: 150px;       /* adjust size */
+  height: auto;
+  /* border-radius: 50%;     keeps circular shape */
+  /* border: 5px solid #ffffff;  white ring around */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Responsive scaling */
+@media (max-width: 768px) {
+  .logo img {
+    max-width: 120px;
+  }
+}
+
+@media (max-width: 480px) {
+  .logo img {
+    max-width: 90px;
+  }
+}
+
+/* Optional hover effect */
+.logo img:hover {
+  transform: scale(1.05);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.25);
+}
+
+
 /* 
 ---------------------------------------------
 responsive
