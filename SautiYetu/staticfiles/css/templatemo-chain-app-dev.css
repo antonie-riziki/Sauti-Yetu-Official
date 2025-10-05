@@ -1952,7 +1952,7 @@ a.btn_red {
   height: auto;
   /* border-radius: 50%;     keeps circular shape */
   /* border: 5px solid #ffffff;  white ring around */
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  /* box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15); */
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
