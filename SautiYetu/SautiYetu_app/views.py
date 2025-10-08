@@ -118,6 +118,16 @@ def home(request):
     return render(request, 'index.html')
 
 
+def projects(request): 
+    return render(request, 'projects.html')
+
+
+def technology(request): 
+    return render(request, 'technology.html')
+
+
+def contact(request): 
+    return render(request, 'contact.html')
 
 
 @csrf_exempt

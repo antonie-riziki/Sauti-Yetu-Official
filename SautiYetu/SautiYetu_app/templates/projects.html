@@ -1,0 +1,328 @@
+
+
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projects - Sauti Yetu</title>
+    <meta name="description" content="Explore Sauti Yetu's current projects and innovations in assistive technology for visual impairments.">
+    <style>
+    
+    
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 4rem 2rem;
+        }
+        h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            color: #203E7A;
+        }
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+        .project-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            transition: transform 0.3s;
+        }
+        .project-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.15);
+        }
+        .project-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 1.5rem;
+        }
+        .project-icon {
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(105deg, rgba(91,104,235,1) 0%, rgba(40,225,253,1) 100%);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1.5rem;
+        }
+        .status-badge {
+            padding: 0.4rem 0.8rem;
+            border-radius: 6px;
+            font-size: 0.85rem;
+            font-weight: 600;
+        }
+        .status-production {
+            background: #d4f4dd;
+            color: #166534;
+        }
+        .status-development {
+            background: #dbeafe;
+            color: #1e40af;
+        }
+        .status-beta {
+            background: #fef3c7;
+            color: #92400e;
+        }
+        .status-research {
+            background: #f3e8ff;
+            color: #6b21a8;
+        }
+        .project-card h3 {
+            color: #203E7A;
+            margin-bottom: 1rem;
+            font-size: 1.5rem;
+        }
+        .project-progress {
+            margin-top: 1.5rem;
+            padding-top: 1.5rem;
+            border-top: 1px solid #e5e5e5;
+        }
+        .tech-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin-top: 1rem;
+        }
+        .tech-tag {
+            background: #f5f5f5;
+            padding: 0.3rem 0.8rem;
+            border-radius: 15px;
+            font-size: 0.85rem;
+            color: #666;
+        }
+        .research-section {
+            background: #f5f5f5;
+        }
+        .research-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+        }
+        .research-item {
+            background: white;
+            padding: 1.5rem;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        .research-dot {
+            width: 12px;
+            height: 12px;
+            background: #FDCB04;
+            border-radius: 50%;
+            flex-shrink: 0;
+        }
+        .cta-box {
+            background: white;
+            padding: 3rem;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            text-align: center;
+        }
+        .btn {
+            display: inline-block;
+            padding: 1rem 2rem;
+            margin-top: 1.5rem;
+            background: #203E7A;
+            color: white;
+            text-decoration: none;
+            border-radius: 8px;
+            font-weight: 600;
+            transition: all 0.3s;
+        }
+        .btn:hover {
+            background: #1a3260;
+            transform: translateY(-2px);
+        }
+        footer {
+            background: #203E7A;
+            color: white;
+            text-align: center;
+            padding: 2rem;
+        }
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    {% include 'navbar.html' %}
+
+    <section class="hero">
+        <h1>Our Projects & Innovations</h1>
+        <p style="font-size: 1.25rem; max-width: 800px; margin: 0 auto; color: #666;">Building the future of assistive technology through continuous research, development, and community collaboration.</p>
+    </section>
+
+    <section class="container">
+        <div class="projects-grid">
+            <div class="project-card">
+                <div class="project-header">
+                    <div class="project-icon">🪄</div>
+                    <span class="status-badge status-production">In Production</span>
+                </div>
+                <h3>Smart Cane Prototype</h3>
+                <p>Our flagship product featuring AI-powered navigation, obstacle detection, and voice feedback.</p>
+                <div class="project-progress">
+                    <p style="font-weight: 600; font-size: 0.9rem; margin-bottom: 0.5rem;">Progress:</p>
+                    <p style="color: #666; font-size: 0.9rem;">Active deployment with 500+ users</p>
+                </div>
+                <div class="tech-tags">
+                    <span class="tech-tag">Arduino</span>
+                    <span class="tech-tag">TensorFlow</span>
+                    <span class="tech-tag">Ultrasonic Sensors</span>
+                </div>
+            </div>
+
+            <div class="project-card">
+                <div class="project-header">
+                    <div class="project-icon">📡</div>
+                    <span class="status-badge status-development">Active Development</span>
+                </div>
+                <h3>Voice AI System</h3>
+                <p>Advanced natural language processing for hands-free control and contextual audio guidance.</p>
+                <div class="project-progress">
+                    <p style="font-weight: 600; font-size: 0.9rem; margin-bottom: 0.5rem;">Progress:</p>
+                    <p style="color: #666; font-size: 0.9rem;">Multi-language support in testing</p>
+                </div>
+                <div class="tech-tags">
+                    <span class="tech-tag">NLP</span>
+                    <span class="tech-tag">Cloud Speech API</span>
+                    <span class="tech-tag">Python</span>
+                </div>
+            </div>
+
+            <div class="project-card">
+                <div class="project-header">
+                    <div class="project-icon">💻</div>
+                    <span class="status-badge status-beta">Beta Testing</span>
+                </div>
+                <h3>Payment Authentication Module</h3>
+                <p>Secure M-Pesa integration with fingerprint biometric authentication for accessible payments.</p>
+                <div class="project-progress">
+                    <p style="font-weight: 600; font-size: 0.9rem; margin-bottom: 0.5rem;">Progress:</p>
+                    <p style="color: #666; font-size: 0.9rem;">Security audits completed</p>
+                </div>
+                <div class="tech-tags">
+                    <span class="tech-tag">M-Pesa API</span>
+                    <span class="tech-tag">Biometric SDK</span>
+                    <span class="tech-tag">Encryption</span>
+                </div>
+            </div>
+
+            <div class="project-card">
+                <div class="project-header">
+                    <div class="project-icon">🧪</div>
+                    <span class="status-badge status-research">Ongoing Research</span>
+                </div>
+                <h3>Accessibility Integration Tests</h3>
+                <p>Comprehensive testing with visually impaired users to ensure optimal usability and safety.</p>
+                <div class="project-progress">
+                    <p style="font-weight: 600; font-size: 0.9rem; margin-bottom: 0.5rem;">Progress:</p>
+                    <p style="color: #666; font-size: 0.9rem;">Monthly community testing sessions</p>
+                </div>
+                <div class="tech-tags">
+                    <span class="tech-tag">User Testing</span>
+                    <span class="tech-tag">Accessibility Standards</span>
+                    <span class="tech-tag">Feedback Systems</span>
+                </div>
+            </div>
+
+            <div class="project-card">
+                <div class="project-header">
+                    <div class="project-icon">💡</div>
+                    <span class="status-badge status-research">Research Phase</span>
+                </div>
+                <h3>Indoor Navigation Enhancement</h3>
+                <p>Using Bluetooth beacons and spatial mapping for precise indoor navigation guidance.</p>
+                <div class="project-progress">
+                    <p style="font-weight: 600; font-size: 0.9rem; margin-bottom: 0.5rem;">Progress:</p>
+                    <p style="color: #666; font-size: 0.9rem;">Initial trials in shopping centers</p>
+                </div>
+                <div class="tech-tags">
+                    <span class="tech-tag">Bluetooth LE</span>
+                    <span class="tech-tag">Spatial Mapping</span>
+                    <span class="tech-tag">Cloud Infrastructure</span>
+                </div>
+            </div>
+
+            <div class="project-card">
+                <div class="project-header">
+                    <div class="project-icon">👥</div>
+                    <span class="status-badge status-development">Active Development</span>
+                </div>
+                <h3>Community Feedback Platform</h3>
+                <p>Voice-first platform for users to share experiences, report issues, and suggest improvements.</p>
+                <div class="project-progress">
+                    <p style="font-weight: 600; font-size: 0.9rem; margin-bottom: 0.5rem;">Progress:</p>
+                    <p style="color: #666; font-size: 0.9rem;">Alpha version with 100+ active participants</p>
+                </div>
+                <div class="tech-tags">
+                    <span class="tech-tag">Flutter</span>
+                    <span class="tech-tag">Django</span>
+                    <span class="tech-tag">Real-time Database</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="research-section">
+        <div class="container">
+            <h2 style="text-align: center; margin-bottom: 1rem;">Ongoing Research</h2>
+            <p style="text-align: center; color: #666; margin-bottom: 3rem; font-size: 1.1rem;">Areas we're actively exploring to enhance accessibility and user experience.</p>
+            <div class="research-grid">
+                <div class="research-item">
+                    <div class="research-dot"></div>
+                    <p>Advanced haptic feedback systems</p>
+                </div>
+                <div class="research-item">
+                    <div class="research-dot"></div>
+                    <p>Integration with public transport systems</p>
+                </div>
+                <div class="research-item">
+                    <div class="research-dot"></div>
+                    <p>AI-powered route optimization</p>
+                </div>
+                <div class="research-item">
+                    <div class="research-dot"></div>
+                    <p>Weather-adaptive navigation</p>
+                </div>
+                <div class="research-item">
+                    <div class="research-dot"></div>
+                    <p>Emergency alert systems</p>
+                </div>
+                <div class="research-item">
+                    <div class="research-dot"></div>
+                    <p>Cross-platform mobile applications</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="container">
+        <div class="cta-box">
+            <h2>Want to Collaborate?</h2>
+            <p style="font-size: 1.1rem; color: #666; margin-top: 1rem;">We welcome partnerships with researchers, developers, and organizations passionate about accessibility. Together, we can create even greater impact.</p>
+            <a href="contact.html" class="btn">Get in Touch</a>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2025 Sauti Yetu. Empowering Vision Through Technology.</p>
+    </footer>
+</body>
+</html>
