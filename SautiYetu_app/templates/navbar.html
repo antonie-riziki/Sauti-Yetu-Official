@@ -1,0 +1,54 @@
+{% load static %}
+
+<!-- ***** Header Area Start ***** -->
+<header class="header-area header-sticky wow slideInDown" data-wow-duration="0.75s" data-wow-delay="0s">
+  <div class="container">
+    <div class="row">
+      <div class="col-12">
+        <nav class="main-nav">
+
+          <!-- ***** Logo Start ***** -->
+          <a href="/" class="logo">
+            <img src="{% static 'images/WhatsApp_Image_2025-08-25_at_9.48.06_AM-removebg-preview.png' %}" 
+                 alt="Sauti Yetu Logo" 
+                 style="height: 120px;">
+          </a>
+          <!-- ***** Logo End ***** -->
+
+          <!-- ***** Menu Start ***** -->
+          <ul class="nav">
+            <li class="scroll-to-section">
+              <a href="/" class="active">Home</a>
+            </li>
+
+            <li class="scroll-to-section">
+              <a href="/products">Products</a>
+            </li>
+
+            <li class="scroll-to-section">
+              <a href="/technology">Technology</a>
+            </li>
+
+            <li class="scroll-to-section">
+             <a href="{% url 'about_us' %}">About Us</a>
+            </li>
+
+            <li>
+              <div class="gradient-button">
+                <a id="modal_trigger" href="">
+                  <i class="fa fa-sign-in-alt"></i> Get Involved
+                </a>
+              </div>
+            </li>
+          </ul>
+          <a class="menu-trigger">
+            <span>Menu</span>
+          </a>
+          <!-- ***** Menu End ***** -->
+
+        </nav>
+      </div>
+    </div>
+  </div>
+</header>
+<!-- ***** Header Area End ***** -->

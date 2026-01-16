@@ -1,0 +1,115 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <title>Sauti Yetu | Our Products</title>
+
+  <link href="{% static 'vendor/bootstrap/css/bootstrap.min.css' %}" rel="stylesheet">
+  <link rel="stylesheet" href="{% static 'css/templatemo-chain-app-dev.css' %}">
+  <link rel="stylesheet" href="{% static 'css/animated.css' %}">
+  <link rel="stylesheet" href="{% static 'css/owl.css' %}">
+
+  <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+
+<body>
+
+{% include 'navbar.html' %}
+
+<section class="projects-container">
+  <div class="container" style="padding-bottom: 80px;">
+    <div class="row">
+      <div class="col-lg-8 offset-lg-2">
+        <div class="section-heading wow fadeInDown" data-wow-duration="1s">
+          <h4>Our <em>Products</em></h4>
+          <img src="{% static 'images/heading-line-dec.png' %}" alt="">
+          <p>Purpose-built assistive technologies designed to empower individuals with visual and speech impairments through innovation and inclusion.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="projects-grid">
+
+    <div class="project-card">
+      <div class="project-header">
+        <div class="project-icon">🦯</div>
+        <span class="status-badge status-production">MVP Stage</span>
+      </div>
+      <h3>Sightra</h3>
+      <p>An integrated navigation ecosystem combining a smart cane, web platform, and voice interaction to support safe movement and spatial awareness.</p>
+      <div class="project-progress">
+        <p style="font-weight:600;">Current Focus</p>
+        <p style="color:#666;">Voice command reliability, real-time obstacle detection, and low-bandwidth connectivity.</p>
+      </div>
+      <div class="tech-tags">
+        <span class="tech-tag">IoT Sensors</span>
+        <span class="tech-tag">Edge AI</span>
+        <span class="tech-tag">Voice UX</span>
+      </div>
+    </div>
+
+    <div class="project-card">
+      <div class="project-header">
+        <div class="project-icon">🗣️</div>
+        <span class="status-badge status-development">Active Development</span>
+      </div>
+      <h3>Theravoo</h3>
+      <p>Assistive speech understanding that helps people with speech impairments be understood in conversations, care settings, and digital platforms.</p>
+      <div class="project-progress">
+        <p style="font-weight:600;">Current Focus</p>
+        <p style="color:#666;">Adaptive AI models to interpret non-standard speech patterns while respecting privacy and autonomy.</p>
+      </div>
+      <div class="tech-tags">
+        <span class="tech-tag">Adaptive AI</span>
+        <span class="tech-tag">Pattern Recognition</span>
+        <span class="tech-tag">Privacy Tech</span>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<section class="research-section">
+  <div class="container">
+    <h2 style="text-align:center;">Product Enhancement Research</h2>
+    <p style="text-align:center;color:#666;margin-bottom:3rem;">
+      Continuous exploration to strengthen reliability, safety, and real-world usability across our assistive suite.
+    </p>
+
+    <div class="research-grid">
+      <div class="research-item"><div class="research-dot"></div><p>Improved haptic feedback patterns</p></div>
+      <div class="research-item"><div class="research-dot"></div><p>Non-standard speech dataset expansion</p></div>
+      <div class="research-item"><div class="research-dot"></div><p>Context-aware route guidance</p></div>
+      <div class="research-item"><div class="research-dot"></div><p>Offline-first processing logic</p></div>
+      <div class="research-item"><div class="research-dot"></div><p>Public infrastructure mapping</p></div>
+      <div class="research-item"><div class="research-dot"></div><p>Emergency assistance workflows</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="container">
+  <div class="cta-box">
+    <h2>Partner With Us</h2>
+    <p style="font-size:1.1rem;color:#666;margin-top:1rem;">
+      We collaborate with disability networks, research institutions, and accessibility advocates to bring Sightra and Theravoo into real-world use.
+    </p>
+    <a href="/contact/" class="btn">Get in Touch</a>
+  </div>
+</section>
+
+<footer>
+  <p>&copy; 2026 Sauti Yetu. Building Assistive Technology for Independent Living.</p>
+</footer>
+
+<script>
+  lucide.createIcons();
+</script>
+
+</body>
+</html>

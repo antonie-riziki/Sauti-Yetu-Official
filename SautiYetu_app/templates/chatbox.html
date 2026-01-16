@@ -1,0 +1,140 @@
+
+
+{% load static %}
+   
+
+<!-- Floating Chatbot -->
+    <div class="chatbot-container">
+        <div class="chatbot-window" id="chatbotWindow">
+            <div class="chatbot-header">
+                <div class="chatbot-info">
+                    <img src="{% static 'images/WhatsApp_Image_2025-08-25_at_9.48.06_AM-removebg-preview.png' %}" alt="SheCare Avatar" class="chatbot-avatar">
+                    <div class="chatbot-text">
+                        <div class="chatbot-nam">Sauti Yetu</div>
+                        <div class="chatbot-subtitle">Your Voice, Your Path, Your Power</div>
+                    </div>
+                </div>
+                <button class="chatbot-close" onclick="toggleChatbot()">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="chatbot-body" id="chatbotBody">
+                <div class="chat-message">
+                    <div class="message-avatar bot-avatar">
+                        <img src="{% static 'images/WhatsApp_Image_2025-08-25_at_9.48.06_AM-removebg-preview.png' %}" alt="SheCare Logo" 
+                    style="height: 30px;">
+                    </div>
+                    <div class="message-content">
+                        How may I help you?
+                    </div>
+                </div>
+            </div>
+            <div class="chatbot-input">
+                <div class="input-group">
+                    <input type="text" class="chat-input" id="chatInput" placeholder="Type your message...">
+                    <button class="send-btn" onclick="sendMessage()">
+                        <i class="fas fa-paper-plane"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <button class="chatbot-trigger" type="button" title="Open Chatbot" onclick="toggleChatbot()">
+            <i class="fas fa-comments"></i>
+        </button>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+
+    <script>
+        // Chatbot functionality
+        function toggleChatbot() {
+            const chatbotWindow = document.getElementById('chatbotWindow');
+            chatbotWindow.classList.toggle('show');
+        }
+
+        function sendMessage() {
+            const chatInput = document.getElementById('chatInput');
+            const chatbotBody = document.getElementById('chatbotBody');
+            const message = chatInput.value.trim();
+
+            if (!message) return;
+
+            // Add user message
+            const userMessage = document.createElement('div');
+            userMessage.className = 'chat-message user';
+            userMessage.innerHTML = `
+                <div class="message-avatar user-avatar">
+                    <i class="fas fa-user"></i>
+                </div>
+                <div class="message-content">${message}</div>
+            `;
+            chatbotBody.appendChild(userMessage);
+            chatInput.value = '';
+            chatbotBody.scrollTop = chatbotBody.scrollHeight;
+
+            // Loading Indicator
+            const loadingMessage = document.createElement('div');
+            loadingMessage.className = 'chat-message bot typing';
+            loadingMessage.innerHTML = `
+                <div class="message-avatar bot-avatar">
+                    <img src="{% static 'images/WhatsApp_Image_2025-08-25_at_9.48.06_AM-removebg-preview.png' %}" alt="SheCare Logo" 
+                    style="height: 30px;">
+                </div>
+                <div class="message-content">...</div>
+            `;
+            chatbotBody.appendChild(loadingMessage);
+            chatbotBody.scrollTop = chatbotBody.scrollHeight;
+
+            // Send to Django
+            fetch('/chatbot-response/', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                    'X-CSRFToken': getCookie('csrftoken')
+                },
+                body: JSON.stringify({ message: message })
+            })
+            .then(response => response.json())
+            .then(data => {
+                chatbotBody.removeChild(loadingMessage);
+
+                const botMessage = document.createElement('div');
+                botMessage.className = 'chat-message';
+                botMessage.innerHTML = `
+                    <div class="message-avatar bot-avatar">
+                        <img src="{% static 'images/WhatsApp_Image_2025-08-25_at_9.48.06_AM-removebg-preview.png' %}" alt="SheCare Logo" 
+                    style="height: 30px;">
+                    </div>
+                    <div class="message-content">${data.response}</div>
+                `;
+                chatbotBody.appendChild(botMessage);
+                chatbotBody.scrollTop = chatbotBody.scrollHeight;
+            })
+            .catch(error => {
+                chatbotBody.removeChild(loadingMessage);
+                console.error('Error:', error);
+            });
+        }
+
+        function getCookie(name) {
+            let cookieValue = null;
+            if (document.cookie && document.cookie !== '') {
+                const cookies = document.cookie.split(';');
+                for (let cookie of cookies) {
+                    const trimmed = cookie.trim();
+                    if (trimmed.substring(0, name.length + 1) === (name + '=')) {
+                        cookieValue = decodeURIComponent(trimmed.substring(name.length + 1));
+                        break;
+                    }
+                }
+            }
+            return cookieValue;
+        }
+
+        // Enter key support for chat
+        document.getElementById('chatInput').addEventListener('keypress', (e) => {
+            if (e.key === 'Enter') {
+                sendMessage();
+            }
+        });
+    </script>

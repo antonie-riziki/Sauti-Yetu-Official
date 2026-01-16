@@ -1,0 +1,80 @@
+{% load static %}
+
+<footer id="newsletter">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 offset-lg-2">
+          <div class="section-heading">
+            <h4>Join our mailing list to receive the news &amp; latest trends</h4>
+          </div>
+        </div>
+        <div class="col-lg-6 offset-lg-3">
+          <form id="search" action="#" method="GET">
+            <div class="row">
+              <div class="col-lg-6 col-sm-6">
+                <fieldset>
+                  <input type="email" name="email" class="email" placeholder="Email Address..." autocomplete="on" required>
+                </fieldset>
+              </div>
+              <div class="col-lg-6 col-sm-6">
+                <fieldset>
+                  <button type="submit" class="main-button">Subscribe Now <i class="fa fa-angle-right"></i></button>
+                </fieldset>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+      
+      <div class="row">
+        <div class="col-lg-3">
+          <div class="footer-widget">
+            <h4>Contact Us</h4>
+            <p>Waiyaki Way, Nairobi, Kenya</p>
+            <p><a href="tel:+254727289745">0727 289 745</a></p>
+            <p><a href="mailto:info@sautiyetu.co.ke">info@sautiyetu.co.ke</a></p>
+          </div>
+        </div>
+
+        <div class="col-lg-3">
+          <div class="footer-widget">
+            <h4>Quick Links</h4>
+            <ul>
+              <li><a href="{% url 'home' %}">Home</a></li>
+              <li><a href="{% url 'about_us' %}">About Us</a></li>
+              <li><a href="{% url 'technology' %}">Technology</a></li>
+              <li><a href="{% url 'products' %}">Our Products</a></li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="col-lg-3">
+          <div class="footer-widget">
+            <h4>Our Products</h4>
+            <ul>
+              <li><a href="{% url 'products' %}">Sightra Smart Cane</a></li>
+              <li><a href="{% url 'products' %}">Theravoo Speech AI</a></li>
+              <li><a href="{% url 'technology' %}">IoT Ecosystem</a></li>
+              <li><a href="{% url 'technology' %}">AI Research</a></li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="col-lg-3">
+          <div class="footer-widget">
+            <h4>Sauti Yetu</h4>
+            <div class="logo">
+              <img src="{% static 'images/WhatsApp_Image_2025-08-25_at_9.48.06_AM-removebg-preview.png' %}" alt="Sauti Yetu Logo" style="max-width: 150px;">
+            </div>
+            <p>Empowering vision and speech through sound, technology, and co-creation. Giving every journey a voice.</p>
+          </div>
+        </div>
+
+        <div class="col-lg-12">
+          <div class="copyright-text">
+            <p>Copyright © 2026 Sauti Yetu. All Rights Reserved.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+</footer>

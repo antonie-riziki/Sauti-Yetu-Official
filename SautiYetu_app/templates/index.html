@@ -1,0 +1,281 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="Sauti Yetu – Inclusive assistive technologies for visual and speech impairments">
+  <meta name="author" content="">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap" rel="stylesheet">
+
+  <title>Sauti Yetu | Home</title>
+
+  <link href="{% static 'vendor/bootstrap/css/bootstrap.min.css' %}" rel="stylesheet">
+
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
+    integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+  <link rel="stylesheet" href="{% static 'css/templatemo-chain-app-dev.css' %}">
+  <link rel="stylesheet" href="{% static 'css/animated.css' %}">
+  <link rel="stylesheet" href="{% static 'css/owl.css' %}">
+
+  <script src="https://unpkg.com/lucide@latest"></script>
+
+  <style>
+    /* CSS Fix for the 'Get Involved' Section and Card Alignment */
+    #get-involved {
+      padding: 100px 0;
+      background-color: #f8f9fa;
+    }
+
+    .way-card {
+      text-align: center;
+      padding: 45px 25px;
+      background: #fff;
+      border-radius: 20px;
+      box-shadow: 0px 0px 15px rgba(0,0,0,0.05);
+      margin-bottom: 30px;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      transition: all 0.3s ease;
+      border: 1px solid #f1f1f1;
+    }
+
+    .way-card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0px 15px 30px rgba(0,0,0,0.1);
+    }
+
+    .way-number {
+      width: 65px;
+      height: 65px;
+      background: linear-gradient(105deg, rgba(91,104,235,1) 0%, rgba(40,225,253,1) 100%);
+      color: #fff;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 26px;
+      font-weight: 700;
+      margin: 0 auto 25px auto;
+    }
+
+    .way-card h3 {
+      font-size: 22px;
+      font-weight: 700;
+      color: #203E7A;
+      margin-bottom: 20px;
+    }
+
+    .way-card p {
+      font-size: 15px;
+      line-height: 26px;
+      color: #666;
+      margin-bottom: 30px;
+      flex-grow: 1;
+    }
+
+    /* Fix for Lucide icons in Values section */
+    .box-item i {
+      font-size: 32px;
+      color: #5b68eb;
+      margin-bottom: 15px;
+      display: block;
+    }
+  </style>
+
+</head>
+
+<body>
+
+  <div id="js-preloader" class="js-preloader">
+    <div class="preloader-inner">
+      <span class="dot"></span>
+      <div class="dots">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+    </div>
+  </div>
+  {% include 'navbar.html' %}
+
+  <div class="main-banner wow fadeIn" id="top" data-wow-duration="1s" data-wow-delay="0.5s">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-6 align-self-center">
+          <div class="left-content show-up header-text wow fadeInLeft" data-wow-duration="1s" data-wow-delay="1s">
+            <h2>Assistive Technologies for Independence and Confidence</h2>
+            <p>Sauti Yetu creates assistive technology that helps people communicate, perceive, and navigate their world. Our systems combine human centered design with artificial intelligence to provide real-time guidance for people with visual or speech impairments.</p>
+            <div class="white-button first-button scroll-to-section">
+              <a href="#products">Explore Products</a>
+            </div>
+            <div class="white-button scroll-to-section">
+              <a href="#get-involved">Get Involved</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-6">
+          <div class="right-image wow fadeInRight" data-wow-duration="1s" data-wow-delay="0.5s">
+            <img src="{% static 'images/Volunteering-rafiki (1).png' %}" alt="Sauti Yetu Illustration">
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div id="products" class="services section">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 offset-lg-2">
+          <div class="section-heading wow fadeInDown" data-wow-duration="1s" data-wow-delay="0.5s">
+            <h4>Our <em>Products</em></h4>
+            <img src="{% static 'images/heading-line-dec.png' %}" alt="">
+            <p>Assistive technology solutions designed for people with visual and speech impairments.</p>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-lg-6">
+          <div class="service-item first-service">
+            <h4>Sightra</h4>
+            <p>Sightra helps people with visual impairment or blindness navigate independently using a smart cane and web-based guidance. AI interprets surroundings and provides voice instructions in real-time for safe mobility.</p>
+          </div>
+        </div>
+        <div class="col-lg-6">
+          <div class="service-item second-service">
+            <h4>Theravoo</h4>
+            <p>Theravoo assists people with speech impairments to communicate effectively. AI interprets non-standard speech and provides contextual understanding for caregivers, therapists, and digital platforms.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div id="about" class="about-us section">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-6 align-self-center">
+          <div class="section-heading">
+            <h4>Our Core <em>Values</em></h4>
+            <img src="{% static 'images/heading-line-dec.png' %}" alt="">
+            <p>The principles that guide everything we do at Sauti Yetu.</p>
+          </div>
+          <div class="row">
+            <div class="col-lg-6">
+              <div class="box-item">
+                <i data-lucide="heart"></i>
+                <h4><a href="#">Empathy-Driven</a></h4>
+                <p>We design with and for our users, understanding their real-world experiences.</p>
+              </div>
+            </div>
+            <div class="col-lg-6">
+              <div class="box-item">
+                <i data-lucide="lightbulb"></i>
+                <h4><a href="#">Innovation First</a></h4>
+                <p>Using AI and smart technology to create practical, scalable solutions.</p>
+              </div>
+            </div>
+            <div class="col-lg-6">
+              <div class="box-item">
+                <i data-lucide="users"></i>
+                <h4><a href="#">Community Focused</a></h4>
+                <p>Building together with visually and speech impaired communities at every step.</p>
+              </div>
+            </div>
+            <div class="col-lg-6">
+              <div class="box-item">
+                <i data-lucide="target"></i>
+                <h4><a href="#">Impact Oriented</a></h4>
+                <p>Measuring success by the real-world difference we make in people's lives.</p>
+              </div>
+            </div>
+            <div class="col-lg-12">
+              <div class="gradient-button">
+                <a href="{% url 'about_us' %}">Learn More About Us</a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-6">
+          <div class="right-image">
+            <img src="{% static 'images/about-right-dec.png' %}" alt="About Sauti Yetu">
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div id="get-involved" class="section">
+    <div class="container">
+      <div class="section-heading text-center">
+        <h4>Ways to <em>Get Involved</em></h4>
+        <p>Whether you're a user, developer, researcher, or advocate, you can join our community.</p>
+      </div>
+      <div class="row">
+        <div class="col-lg-3">
+          <div class="way-card">
+            <div>
+              <div class="way-number">1</div>
+              <h3>Become a Beta Tester</h3>
+              <p>Help us co-create new features and provide valuable feedback on Sightra and Theravoo.</p>
+            </div>
+            <div class="gradient-button"><a href="{% url 'about_us' %}">Get Started</a></div>
+          </div>
+        </div>
+        <div class="col-lg-3">
+          <div class="way-card">
+            <div>
+              <div class="way-number">2</div>
+              <h3>Volunteer</h3>
+              <p>Support training sessions and community outreach programs for accessibility awareness.</p>
+            </div>
+            <div class="gradient-button"><a href="{% url 'about_us' %}">Get Involved</a></div>
+          </div>
+        </div>
+        <div class="col-lg-3">
+          <div class="way-card">
+            <div>
+              <div class="way-number">3</div>
+              <h3>Partner with Us</h3>
+              <p>Organizations can collaborate on inclusive technology and accessibility initiatives.</p>
+            </div>
+            <div class="gradient-button"><a href="{% url 'about_us' %}">Join the Mission</a></div>
+          </div>
+        </div>
+        <div class="col-lg-3">
+          <div class="way-card">
+            <div>
+              <div class="way-number">4</div>
+              <h3>Share Your Story</h3>
+              <p>Inspire others by sharing your journey and experience with our assistive technology.</p>
+            </div>
+            <div class="gradient-button"><a href="{% url 'about_us' %}">Inspire Others</a></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  {% include 'footer.html' %}
+  {% include 'chatbox.html' %}
+
+  <script>
+    lucide.createIcons();
+  </script>
+  <script src="{% static 'vendor/jquery/jquery.min.js' %}"></script>
+  <script src="{% static 'vendor/bootstrap/js/bootstrap.bundle.min.js' %}"></script>
+  <script src="{% static 'js/owl-carousel.js' %}"></script>
+  <script src="{% static 'js/animation.js' %}"></script>
+  <script src="{% static 'js/imagesloaded.js' %}"></script>
+  <script src="{% static 'js/popup.js' %}"></script>
+  <script src="{% static 'js/custom.js' %}"></script>
+
+</body>
+</html>

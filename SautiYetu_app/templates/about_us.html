@@ -1,0 +1,165 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>About Us - Sauti Yetu</title>
+
+    <link href="{% static 'vendor/bootstrap/css/bootstrap.min.css' %}" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'css/templatemo-chain-app-dev.css' %}">
+    
+    <style>
+        /* Tightened Hero/Description Section */
+        .main-content {
+            padding: 140px 2rem 40px 2rem; /* Reduced padding for tighter spacing */
+            background: #ffffff;
+        }
+
+        .main-content p {
+            font-size: 1.25rem;
+            color: #000000;
+            max-width: 1000px;
+            margin: 0 auto;
+            line-height: 1.7;
+            text-align: justify; /* Balanced alignment */
+            text-justify: inter-word;
+        }
+
+        .container { max-width: 1100px; margin: 0 auto; padding: 0 1rem; }
+
+        /* Compact Contact Grid */
+        .contact-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.5rem; /* Reduced gap */
+            margin-top: 2.5rem;
+        }
+
+        .contact-card {
+            background: #ffffff;
+            padding: 1.5rem;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            text-align: center;
+            border: 1px solid #f0f0f0;
+        }
+
+        .card-icon { font-size: 2rem; margin-bottom: 0.5rem; display: block; }
+        .contact-card h3 { color: #203E7A; margin-bottom: 0.5rem; font-size: 1.2rem; }
+        .contact-card a { color: #5b68eb; font-weight: 600; text-decoration: none; }
+
+        /* Structured Partners Section */
+        .partners-section {
+            padding: 40px 0;
+            border-top: 1px solid #eee;
+            margin-top: 3rem;
+            text-align: center;
+        }
+
+        .partners-section h2 {
+            color: #203E7A;
+            font-size: 1.8rem;
+            margin-bottom: 1.5rem;
+            font-weight: 700;
+        }
+
+        .partner-list {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 1rem;
+        }
+
+        .partner-tag {
+            padding: 6px 18px;
+            background: #f8f9fa;
+            border: 1px solid #dee2e6;
+            border-radius: 4px;
+            color: #444;
+            font-weight: 500;
+            text-decoration: none;
+            transition: 0.2s;
+        }
+
+        .partner-tag:hover {
+            background: #203E7A;
+            color: #ffffff;
+            border-color: #203E7A;
+        }
+
+        .map-badge {
+            margin-top: 10px;
+            display: inline-block;
+            font-size: 0.9rem;
+            color: #5b68eb;
+            font-weight: 600;
+        }
+
+        footer {
+            background: #203E7A;
+            color: white;
+            text-align: center;
+            padding: 1.5rem;
+            margin-top: 3rem;
+        }
+    </style>
+</head>
+<body>
+
+    {% include 'navbar.html' %}
+
+    <section class="main-content">
+        <div class="container">
+            <p>
+                We're here to answer your questions, discuss partnerships, and support your journey to greater independence. Sauti Yetu is powered by a multidisciplinary team of pioneers in AI/ML Research, Product Development, and Human-Centered Design. We don't just build tools, we co-create assistive ecosystems that bridge the gap for visually and speech impaired individuals in Africa. Our approach combines technical rigor with deep empathy to ensure every solution is intuitive and impactful.
+            </p>
+        </div>
+    </section>
+
+    <section class="container">
+        <div class="contact-grid">
+            <div class="contact-card">
+                <span class="card-icon">📱</span>
+                <h3>Call Us</h3>
+                <a href="tel:+254727289745">+254 727 289 745</a>
+            </div>
+
+            <div class="contact-card">
+                <span class="card-icon">📧</span>
+                <h3>Email Us</h3>
+                <a href="mailto:info@sautiyetu.co.ke">info@sautiyetu.co.ke</a>
+            </div>
+
+            <div class="contact-card">
+                <span class="card-icon">📍</span>
+                <h3>Location</h3>
+                <p style="margin-bottom: 5px;">Nairobi, Kenya</p>
+                <a href="https://maps.google.com/?q=Waiyaki+Way+Nairobi" target="_blank" class="map-badge">
+                    Waiyaki Way →
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <section class="partners-section">
+        <div class="container">
+            <h2>Our Partners</h2>
+            <div class="partner-list">
+                <a href="https://atinnovatenow.com/" target="_blank" class="partner-tag">Innovate Now</a>
+                <a href="https://www.kilimanjaroblindtrust.org/" target="_blank" class="partner-tag">Kilimanjaro Blind Trust</a>
+                <a href="https://at4d.org/" target="_blank" class="partner-tag">Assistive Tech Trust</a>
+                <a href="https://senseshub.vision/" target="_blank" class="partner-tag">Senses Hub</a>
+                <a href="https://www.disabilityinnovation.com/" target="_blank" class="partner-tag">GDI Hub</a>
+                <a href="https://www.clintonhealthaccess.org/" target="_blank" class="partner-tag">CHAI</a>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>© 2026 Sauti Yetu. Empowering Independence Through Technology.</p>
+    </footer>
+
+</body>
+</html>

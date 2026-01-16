@@ -1,0 +1,263 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Technology - Sauti Yetu</title>
+    <meta name="description" content="Discover the AI, IoT, and voice interaction technology behind Sauti Yetu's smart mobility and speech solutions.">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap" rel="stylesheet">
+
+    <link href="{% static 'vendor/bootstrap/css/bootstrap.min.css' %}" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css">
+    <link rel="stylesheet" href="{% static 'css/templatemo-chain-app-dev.css' %}">
+    <link rel="stylesheet" href="{% static 'css/animated.css' %}">
+    <link rel="stylesheet" href="{% static 'css/owl.css' %}">
+
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <style>
+        /* Fix for the overlapping navbar */
+        .hero {
+            padding: 160px 0 100px 0; 
+            text-align: center;
+            background-image: url("{% static 'images/slider-left-dec.png' %}");
+            background-repeat: no-repeat;
+            background-position: left top;
+            background-color: #f8f9fa;
+        }
+
+        .hero h1 {
+            color: #203E7A;
+            font-weight: 700;
+            font-size: 3rem;
+            margin-bottom: 20px;
+        }
+
+        .hero p {
+            font-size: 1.25rem;
+            color: #666;
+            max-width: 800px;
+            margin: 0 auto;
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 4rem 2rem;
+        }
+
+        h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            color: #203E7A;
+        }
+
+        .diagram-section {
+            background: #f5f5f5;
+        }
+
+        .tech-features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .tech-card {
+            background: white;
+            padding: 2.5rem;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            transition: transform 0.3s;
+            border-top: 5px solid #5b68eb;
+        }
+
+        .tech-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.15);
+        }
+
+        .tech-icon {
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(105deg, rgba(91,104,235,1) 0%, rgba(40,225,253,1) 100%);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 1.5rem;
+            color: white;
+            font-size: 1.5rem;
+        }
+
+        .tech-card h3 {
+            color: #203E7A;
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .tech-card ul {
+            list-style: none;
+            margin-top: 1.5rem;
+            padding-left: 0;
+        }
+
+        .tech-card li {
+            padding: 0.5rem 0;
+            padding-left: 1.5rem;
+            position: relative;
+            color: #666;
+        }
+
+        .tech-card li:before {
+            content: "•";
+            position: absolute;
+            left: 0;
+            color: #FDCB04;
+            font-size: 1.2rem;
+        }
+
+        .tech-stack {
+            background: #f5f5f5;
+        }
+
+        .badges {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            justify-content: center;
+        }
+
+        .badge-pill-custom {
+            background: white;
+            padding: 0.75rem 1.5rem;
+            border-radius: 25px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            font-weight: 600;
+            color: #333;
+        }
+
+        .innovation-box {
+            background: white;
+            padding: 3rem;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+
+        footer {
+            background: #203E7A;
+            color: white;
+            text-align: center;
+            padding: 2rem;
+        }
+
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    {% include 'navbar.html' %}
+
+    <section class="hero">
+        <div class="container">
+            <h1>The Technology Behind Sauti Yetu</h1>
+            <p>Combining artificial intelligence, IoT sensors, and adaptive speech models to create a seamless assistive experience for visual and speech empowerment.</p>
+        </div>
+    </section>
+
+    <section class="diagram-section">
+        <div class="container">
+            <h2 style="text-align: center;">How It Works</h2>
+            <p style="text-align: center; color: #666; margin-bottom: 3rem; font-size: 1.1rem;">A sophisticated system of interconnected components working together seamlessly.</p>
+            <div style="background: white; padding: 3rem; border-radius: 12px; text-align: center;">
+                <div style="width: 100%; height: 400px; background: #f0f0f0; border: 2px dashed #ddd; border-radius: 12px; display: flex; align-items: center; justify-content: center;">
+                    <span style="color: #999;">[Technical Architecture Diagram Coming Soon]</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="container">
+        <h2 style="text-align: center; margin-bottom: 1rem;">Core Technologies</h2>
+        <p style="text-align: center; color: #666; margin-bottom: 3rem; font-size: 1.1rem;">Every component is designed with accessibility, reliability, and user autonomy in mind.</p>
+        <div class="tech-features">
+            <div class="tech-card">
+                <div class="tech-icon">🦯</div>
+                <h3>Sightra Ecosystem</h3>
+                <p>Advanced IoT sensors and Edge AI work in harmony to detect obstacles and provide spatial awareness in real-time.</p>
+                <ul>
+                    <li>Ultrasonic distance sensors</li>
+                    <li>Voice command integration</li>
+                    <li>Vibration feedback system</li>
+                    <li>Real-time object detection</li>
+                </ul>
+            </div>
+            <div class="tech-card">
+                <div class="tech-icon">🗣️</div>
+                <h3>Theravoo Adaptive AI</h3>
+                <p>Sophisticated speech models designed to interpret non-standard patterns and facilitate clear communication.</p>
+                <ul>
+                    <li>Pattern recognition models</li>
+                    <li>Context-aware intent mapping</li>
+                    <li>Privacy-first local processing</li>
+                    <li>Multi-platform integration</li>
+                </ul>
+            </div>
+            <div class="tech-card">
+                <div class="tech-icon">🔒</div>
+                <h3>Accessible Payments</h3>
+                <p>Secure biometric authentication for safe, accessible mobile payments without requiring visual confirmation.</p>
+                <ul>
+                    <li>Fingerprint authentication</li>
+                    <li>M-Pesa API integration</li>
+                    <li>Transaction audio feedback</li>
+                    <li>End-to-end encryption</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <section class="tech-stack">
+        <div class="container">
+            <h2 style="text-align: center; margin-bottom: 1rem;">Our Tech Stack</h2>
+            <p style="text-align: center; color: #666; margin-bottom: 3rem; font-size: 1.1rem;">Built on proven, scalable technologies that ensure reliability across our products.</p>
+            <div class="badges">
+                <span class="badge-pill-custom">TensorFlow <small style="color: #999;">• AI/ML</small></span>
+                <span class="badge-pill-custom">Django <small style="color: #999;">• Backend</small></span>
+                <span class="badge-pill-custom">Arduino <small style="color: #999;">• Hardware</small></span>
+                <span class="badge-pill-custom">Google Cloud <small style="color: #999;">• Infrastructure</small></span>
+                <span class="badge-pill-custom">Flutter <small style="color: #999;">• Mobile</small></span>
+            </div>
+        </div>
+    </section>
+
+    <section class="container">
+        <div class="innovation-box">
+            <div style="display: flex; align-items: center; gap: 1.5rem; margin-bottom: 1.5rem;">
+                <div class="tech-icon">💻</div>
+                <h2 style="margin: 0;">Continuous Innovation</h2>
+            </div>
+            <p style="font-size: 1.1rem; color: #555; margin-bottom: 1.5rem;">Our technology is constantly evolving through user feedback and ongoing research into assistive AI. We are focused on reducing device latency and increasing the accuracy of non-standard speech recognition.</p>
+            <p style="font-size: 1.1rem; color: #555;">By leveraging Edge AI and cloud computing, we ensure that Sightra and Theravoo remain at the forefront of the assistive technology landscape.</p>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2026 Sauti Yetu. Empowering Independence Through Technology.</p>
+    </footer>
+
+    <script>
+        lucide.createIcons();
+    </script>
+</body>
+</html>
