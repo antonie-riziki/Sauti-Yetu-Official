@@ -19,7 +19,7 @@ SECRET_KEY = 'django-insecure-(!w-4gg)_y6m1tyw89o@q04d--*6$)k8@+^aq+9z09w6i^v512
 DEBUG = True
 
 # Add '.vercel.app' to allow Vercel to serve the site
-ALLOWED_HOSTS = ['.vercel.app', 'now.sh', 'localhost', '127.0.0.1']
+ALLOWED_HOSTS = ['.vercel.app']
 
 
 # Application definition
@@ -36,7 +36,7 @@ INSTALLED_APPS = [
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
-    'whitenoise.middleware.WhiteNoiseMiddleware',  # Crucial for Vercel static files
+    # 'whitenoise.middleware.WhiteNoiseMiddleware',  # Crucial for Vercel static files
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
@@ -110,5 +110,6 @@ STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 # Media files
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'static/img')
+
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
