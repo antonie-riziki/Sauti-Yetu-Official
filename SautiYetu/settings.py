@@ -19,12 +19,13 @@ SECRET_KEY = 'django-insecure-(!w-4gg)_y6m1tyw89o@q04d--*6$)k8@+^aq+9z09w6i^v512
 DEBUG = True
 
 # Add '.vercel.app' to allow Vercel to serve the site
-ALLOWED_HOSTS = ['.vercel.app']
+ALLOWED_HOSTS = ['.vercel.app', '127.0.0.1']
 
 
 # Application definition
 
 INSTALLED_APPS = [
+    'whitenoise.runserver_nostatic',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -36,7 +37,7 @@ INSTALLED_APPS = [
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
-    # 'whitenoise.middleware.WhiteNoiseMiddleware',  # Crucial for Vercel static files
+    'whitenoise.middleware.WhiteNoiseMiddleware',  # Crucial for Vercel static files
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
@@ -101,7 +102,7 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 # Where your source static files are located
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, 'static'),
-)
+]
 
 # This storage backend handles compression and caching for production
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
