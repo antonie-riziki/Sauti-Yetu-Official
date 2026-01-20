@@ -1,54 +1,355 @@
 {% load static %}
 
 <!-- ***** Header Area Start ***** -->
-<header class="header-area header-sticky wow slideInDown" data-wow-duration="0.75s" data-wow-delay="0s">
-  <div class="container">
-    <div class="row">
-      <div class="col-12">
-        <nav class="main-nav">
+<header class="header-area header-sticky">
+  <div class="navbar-container">
+    <div class="navbar-wrapper">
+      <!-- ***** Logo Start ***** -->
+      <a href="/" class="navbar-logo">
+        <img src="{% static 'images/WhatsApp_Image_2025-08-25_at_9.48.06_AM-removebg-preview.png' %}" 
+             alt="Sauti Yetu Logo" 
+             class="logo-img">
+      </a>
+      <!-- ***** Logo End ***** -->
 
-          <!-- ***** Logo Start ***** -->
-          <a href="/" class="logo">
-            <img src="{% static 'images/WhatsApp_Image_2025-08-25_at_9.48.06_AM-removebg-preview.png' %}" 
-                 alt="Sauti Yetu Logo" 
-                 style="height: 120px;">
-          </a>
-          <!-- ***** Logo End ***** -->
+      <!-- ***** Hamburger Menu Start ***** -->
+      <button class="hamburger-menu" id="hamburgerMenu">
+        <span class="hamburger-icon"></span>
+        <span class="hamburger-icon"></span>
+        <span class="hamburger-icon"></span>
+      </button>
+      <!-- ***** Hamburger Menu End ***** -->
 
-          <!-- ***** Menu Start ***** -->
-          <ul class="nav">
-            <li class="scroll-to-section">
-              <a href="/" class="active">Home</a>
-            </li>
+      <!-- ***** Navigation Menu Start ***** -->
+      <nav class="navbar-menu" id="navbarMenu">
+        <ul class="nav-list">
+          <li class="nav-item">
+            <a href="/" class="nav-link active">Home</a>
+          </li>
 
-            <li class="scroll-to-section">
-              <a href="/products">Products</a>
-            </li>
+          <li class="nav-item">
+            <a href="/products" class="nav-link">Products</a>
+          </li>
 
-            <li class="scroll-to-section">
-              <a href="/technology">Technology</a>
-            </li>
+          <li class="nav-item">
+            <a href="/technology" class="nav-link">Technology</a>
+          </li>
 
-            <li class="scroll-to-section">
-             <a href="{% url 'about_us' %}">About Us</a>
-            </li>
+          <li class="nav-item">
+            <a href="{% url 'about_us' %}" class="nav-link">About Us</a>
+          </li>
 
-            <li>
-              <div class="gradient-button">
-                <a id="modal_trigger" href="">
-                  <i class="fa fa-sign-in-alt"></i> Get Involved
-                </a>
-              </div>
-            </li>
-          </ul>
-          <a class="menu-trigger">
-            <span>Menu</span>
-          </a>
-          <!-- ***** Menu End ***** -->
-
-        </nav>
-      </div>
+          <li class="nav-item">
+            <a href="" class="nav-link cta-button" id="modal_trigger">
+              <i class="fas fa-sign-in-alt"></i> Get Involved
+            </a>
+          </li>
+        </ul>
+      </nav>
+      <!-- ***** Navigation Menu End ***** -->
     </div>
   </div>
+
+  <style>
+    /* Navbar Styling */
+    :root {
+      --primary-color: #5B68EB;
+      --secondary-color: #28E1FD;
+      --dark-color: #2d3748;
+      --text-dark: #1a202c;
+      --border-color: #e2e8f0;
+      --white: #ffffff;
+    }
+
+    .header-area {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 1000;
+      background-color: transparent;
+      backdrop-filter: blur(8px);
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+      transition: all 0.3s ease;
+    }
+
+    .navbar-container {
+      max-width: 1400px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+
+    .navbar-wrapper {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 12px 0;
+      position: relative;
+    }
+
+    /* Logo Styling */
+    .navbar-logo {
+      display: flex;
+      align-items: center;
+      text-decoration: none;
+      flex-shrink: 0;
+    }
+
+    .logo-img {
+      height: 90px;
+      width: auto;
+      transition: all 0.3s ease;
+    }
+
+    .navbar-logo:hover .logo-img {
+      transform: scale(1.05);
+    }
+
+    /* Navigation Menu */
+    .navbar-menu {
+      flex: 1;
+      margin-left: auto;
+    }
+
+    .nav-list {
+      list-style: none;
+      display: flex;
+      align-items: center;
+      gap: 0;
+      margin: 0;
+      padding: 0;
+      justify-content: flex-end;
+    }
+
+    .nav-item {
+      position: relative;
+      height: 100%;
+    }
+
+    .nav-link {
+      display: flex;
+      align-items: center;
+      padding: 24px 22px;
+      color: var(--text-dark);
+      text-decoration: none;
+      font-weight: 700;
+      font-size: 1.15rem;
+      transition: all 0.3s ease;
+      border-bottom: 3px solid transparent;
+      gap: 6px;
+    }
+
+    .nav-link:hover,
+    .nav-link.active {
+      color: var(--primary-color);
+      border-bottom-color: var(--primary-color);
+      background-color: rgba(91, 104, 235, 0.05);
+    }
+
+    .nav-link i {
+      font-size: 1.1rem;
+    }
+
+    /* CTA Button */
+    .cta-button {
+      background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+      color: var(--white) !important;
+      border-radius: 8px;
+      padding: 10px 20px !important;
+      margin-left: 10px;
+      border: none;
+      cursor: pointer;
+      font-weight: 600;
+      transition: all 0.3s ease;
+    }
+
+    .cta-button:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 20px rgba(91, 104, 235, 0.3);
+      border-bottom-color: transparent;
+    }
+
+    /* Hamburger Menu */
+    .hamburger-menu {
+      display: none;
+      flex-direction: column;
+      gap: 6px;
+      background: none;
+      border: none;
+      cursor: pointer;
+      padding: 8px;
+      position: relative;
+    }
+
+    .hamburger-icon {
+      width: 28px;
+      height: 3px;
+      background-color: var(--text-dark);
+      border-radius: 2px;
+      transition: all 0.3s ease;
+      display: block;
+    }
+
+    .hamburger-menu.active .hamburger-icon:nth-child(1) {
+      transform: rotate(45deg) translate(12px, 12px);
+    }
+
+    .hamburger-menu.active .hamburger-icon:nth-child(2) {
+      opacity: 0;
+    }
+
+    .hamburger-menu.active .hamburger-icon:nth-child(3) {
+      transform: rotate(-45deg) translate(10px, -10px);
+    }
+
+    /* Mobile Responsive */
+    @media (max-width: 991px) {
+      .hamburger-menu {
+        display: flex;
+      }
+
+      .navbar-menu {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        background-color: var(--white);
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.3s ease;
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        margin-left: 0;
+      }
+
+      .navbar-menu.active {
+        max-height: 500px;
+      }
+
+      .nav-list {
+        flex-direction: column;
+        gap: 0;
+        width: 100%;
+      }
+
+      .nav-item {
+        width: 100%;
+        border-bottom: 1px solid var(--border-color);
+      }
+
+      .nav-link {
+        padding: 16px 20px;
+        border-bottom: none;
+        width: 100%;
+        justify-content: flex-start;
+      }
+
+      .nav-link:hover,
+      .nav-link.active {
+        background-color: rgba(91, 104, 235, 0.1);
+        border-left: 4px solid var(--primary-color);
+        padding-left: 16px;
+      }
+
+      .cta-button {
+        margin-left: 0;
+        margin-top: 10px;
+        width: calc(100% - 40px);
+        justify-content: center;
+      }
+
+      .logo-img {
+        height: 70px;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .navbar-wrapper {
+        padding: 10px 0;
+      }
+
+      .logo-img {
+        height: 60px;
+      }
+
+      .nav-link {
+        font-size: 1.05rem;
+        padding: 14px 16px;
+      }
+
+      .nav-link i {
+        font-size: 1rem;
+      }
+    }
+
+    @media (max-width: 576px) {
+      .navbar-container {
+        padding: 0 15px;
+      }
+
+      .logo-img {
+        height: 50px;
+      }
+
+      .nav-link {
+        font-size: 0.95rem;
+        padding: 12px 14px;
+      }
+
+      .hamburger-icon {
+        width: 24px;
+        height: 2.5px;
+      }
+
+      .hamburger-menu {
+        gap: 5px;
+        padding: 6px;
+      }
+
+      .cta-button {
+        font-size: 0.9rem;
+        padding: 8px 16px !important;
+      }
+    }
+  </style>
+
+  <script>
+    // Mobile menu toggle
+    const hamburgerMenu = document.getElementById('hamburgerMenu');
+    const navbarMenu = document.getElementById('navbarMenu');
+    const navLinks = document.querySelectorAll('.nav-link');
+
+    hamburgerMenu.addEventListener('click', function() {
+      this.classList.toggle('active');
+      navbarMenu.classList.toggle('active');
+    });
+
+    // Close menu when link is clicked
+    navLinks.forEach(link => {
+      link.addEventListener('click', function() {
+        hamburgerMenu.classList.remove('active');
+        navbarMenu.classList.remove('active');
+      });
+    });
+
+    // Close menu when clicking outside
+    document.addEventListener('click', function(event) {
+      const isClickInsideNav = navbarMenu.contains(event.target) || hamburgerMenu.contains(event.target);
+      if (!isClickInsideNav && navbarMenu.classList.contains('active')) {
+        hamburgerMenu.classList.remove('active');
+        navbarMenu.classList.remove('active');
+      }
+    });
+
+    // Set active link based on current page
+    const currentLocation = location.pathname;
+    navLinks.forEach(link => {
+      const linkPath = new URL(link.href).pathname;
+      if (linkPath === currentLocation) {
+        link.classList.add('active');
+      } else {
+        link.classList.remove('active');
+      }
+    });
+  </script>
 </header>
 <!-- ***** Header Area End ***** -->
