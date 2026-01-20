@@ -13,8 +13,478 @@
   <link rel="stylesheet" href="{% static 'css/templatemo-chain-app-dev.css' %}">
   <link rel="stylesheet" href="{% static 'css/animated.css' %}">
   <link rel="stylesheet" href="{% static 'css/owl.css' %}">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
   <script src="https://unpkg.com/lucide@latest"></script>
+
+  <style>
+    /* Products Page Custom Styling */
+    :root {
+      /* --primary-color: linear-gradient(105deg, rgba(91,104,235,1) 0%, rgba(40,225,253,1) 100%); */
+      --primary-color: #5B68EB;
+      --secondary-color: #28E1FD;
+      --dark-color: #2d3748;
+      --light-gray: #f7fafc;
+      --text-dark: #1a202c;
+      --text-light: #4a5568;
+      --border-color: #e2e8f0;
+    }
+
+    body {
+      font-family: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      background-color: #ffffff;
+      color: var(--text-dark);
+    }
+
+    .projects-container {
+      background-color: #ffffff;
+      padding: 100px 20px;
+      margin-top: 20px;
+    }
+
+    .section-heading {
+      text-align: center;
+      margin-bottom: 80px;
+    }
+
+    .section-heading h4 {
+      font-size: 2.8rem;
+      font-weight: 700;
+      color: var(--text-dark);
+      margin-bottom: 20px;
+      letter-spacing: -0.5px;
+    }
+
+    .section-heading h4 em {
+      color: var(--primary-color);
+      font-style: normal;
+      font-weight: 800;
+    }
+
+    .section-heading img {
+      margin-bottom: 20px;
+      height: 6px;
+    }
+
+    .section-heading p {
+      font-size: 1.15rem;
+      color: var(--text-light);
+      line-height: 1.8;
+      max-width: 700px;
+      margin: 0 auto;
+      font-weight: 400;
+    }
+
+    .projects-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+      gap: 50px;
+      padding: 0;
+      margin-bottom: 100px;
+      max-width: 1250px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .project-card {
+      background: #ffffff;
+      border-radius: 12px;
+      padding: 50px;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.07);
+      transition: all 0.3s ease;
+      border: 1px solid var(--border-color);
+      border-top: 4px solid var(--primary-color);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .project-card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 12px 30px rgba(0, 0, 0, 0.12);
+    }
+
+    .project-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      margin-bottom: 30px;
+    }
+
+    .project-icon {
+      font-size: 3.5rem;
+      line-height: 1;
+    }
+
+    .status-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 8px 14px;
+      border-radius: 20px;
+      font-size: 0.8rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.3px;
+    }
+
+    .status-production {
+      background-color: #dbeafe;
+      color: #0c4a6e;
+    }
+
+    .status-development {
+      background-color: #fce7f3;
+      color: #831843;
+    }
+
+    .project-card h3 {
+      font-size: 1.9rem;
+      font-weight: 700;
+      color: var(--text-dark);
+      margin-bottom: 18px;
+      letter-spacing: -0.3px;
+    }
+
+    .project-card > p {
+      font-size: 1.05rem;
+      color: var(--text-light);
+      line-height: 1.75;
+      margin-bottom: 30px;
+      font-weight: 400;
+    }
+
+    .project-progress {
+      background-color: var(--light-gray);
+      padding: 24px;
+      border-radius: 8px;
+      margin-bottom: 30px;
+      border-left: 3px solid var(--secondary-color);
+    }
+
+    .project-progress p:first-child {
+      font-weight: 700;
+      font-size: 1.05rem;
+      color: var(--text-dark);
+      margin-bottom: 10px;
+    }
+
+    .project-progress p:last-child {
+      font-size: 1rem;
+      color: var(--text-light);
+      margin: 0;
+      line-height: 1.6;
+    }
+
+    .tech-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    .tech-tag {
+      background-color: var(--light-gray);
+      color: var(--primary-color);
+      padding: 8px 16px;
+      border-radius: 20px;
+      font-size: 0.9rem;
+      font-weight: 600;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      border: 1px solid var(--border-color);
+      transition: all 0.3s ease;
+    }
+
+    .tech-tag:hover {
+      background-color: var(--primary-color);
+      color: white;
+      border-color: var(--primary-color);
+    }
+
+    .research-section {
+      background: linear-gradient(105deg, rgba(91,104,235,1) 0%, rgba(40,225,253,1) 100%);
+      padding: 100px 20px;
+      color: var(--text-dark);
+      border-top: 1px solid var(--border-color);
+      border-bottom: 1px solid var(--border-color);
+    }
+
+    .research-section h2 {
+      font-size: 2.5rem;
+      font-weight: 700;
+      margin-bottom: 15px;
+      color: var(--text-dark);
+      letter-spacing: -0.4px;
+    }
+
+    .research-section > p {
+      font-size: 1.1rem;
+      max-width: 700px;
+      margin: 0 auto !important;
+      text-align: center;
+      color: var(--text-light);
+      line-height: 1.7;
+    }
+
+    .research-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 30px;
+      margin-top: 60px;
+      max-width: 1250px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .research-item {
+      background: #ffffff;
+      padding: 30px;
+      border-radius: 8px;
+      border: 1px solid var(--border-color);
+      display: flex;
+      align-items: flex-start;
+      gap: 18px;
+      transition: all 0.3s ease;
+    }
+
+    .research-item:hover {
+      background: var(--light-gray);
+      border-color: var(--primary-color);
+      transform: translateX(8px);
+    }
+
+    .research-dot {
+      width: 14px;
+      height: 14px;
+      background: var(--primary-color);
+      border-radius: 50%;
+      flex-shrink: 0;
+      margin-top: 4px;
+    }
+
+    .research-item p {
+      font-size: 1.05rem;
+      margin: 0;
+      font-weight: 500;
+      color: var(--text-dark);
+      line-height: 1.6;
+    }
+
+    .cta-box {
+      background: #ffffff;
+      padding: 70px 50px;
+      border-radius: 12px;
+      color: var(--text-dark);
+      text-align: center;
+      margin: 100px auto;
+      max-width: 750px;
+      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+      border: 1px solid var(--border-color);
+    }
+
+    .cta-box h2 {
+      font-size: 2.3rem;
+      font-weight: 700;
+      margin-bottom: 20px;
+      color: var(--text-dark);
+      letter-spacing: -0.3px;
+    }
+
+    .cta-box p {
+      margin: 0;
+      font-size: 1.1rem;
+      line-height: 1.8;
+      color: var(--text-light);
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      margin-top: 30px;
+      padding: 14px 36px;
+      background-color: var(--primary-color);
+      color: white;
+      text-decoration: none;
+      border-radius: 8px;
+      font-weight: 600;
+      font-size: 1rem;
+      transition: all 0.3s ease;
+      border: none;
+      cursor: pointer;
+    }
+
+    .btn:hover {
+      background-color: #4a5bd3;
+      box-shadow: 0 8px 20px rgba(91, 104, 235, 0.25);
+      color: white;
+      text-decoration: none;
+      transform: translateY(-2px);
+    }
+
+    footer {
+      background: linear-gradient(105deg, rgba(91,104,235,1) 0%, rgba(40,225,253,1) 100%);
+      color: white;
+      text-align: center;
+      padding: 40px 20px;
+      margin-top: 0;
+    }
+
+    footer p {
+      color: white;
+      margin: 0;
+      font-size: 1rem;
+      line-height: 1.6;
+    }
+
+    /* Responsive Design */
+    @media (max-width: 768px) {
+      .projects-container {
+        padding: 70px 0;
+      }
+
+      .section-heading h4 {
+        font-size: 2.2rem;
+      }
+
+      .section-heading p {
+        font-size: 1.05rem;
+        line-height: 1.7;
+      }
+
+      .projects-grid {
+        grid-template-columns: 1fr;
+        gap: 35px;
+        padding: 0;
+      }
+
+      .project-card {
+        padding: 40px;
+      }
+
+      .project-card h3 {
+        font-size: 1.7rem;
+      }
+
+      .project-card > p {
+        font-size: 1rem;
+      }
+
+      .research-section {
+        padding: 70px 20px;
+      }
+
+      .research-section h2 {
+        font-size: 2rem;
+      }
+
+      .research-section > p {
+        font-size: 1.05rem;
+      }
+
+      .research-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+        margin-top: 40px;
+      }
+
+      .research-item {
+        padding: 25px;
+      }
+
+      .cta-box {
+        padding: 50px 40px;
+        margin: 70px 20px;
+      }
+
+      .cta-box h2 {
+        font-size: 2rem;
+      }
+
+      .cta-box p {
+        font-size: 1.05rem;
+      }
+
+      .btn {
+        padding: 12px 30px;
+        font-size: 0.95rem;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .projects-container {
+        padding: 50px 15px;
+      }
+
+      .section-heading h4 {
+        font-size: 1.8rem;
+      }
+
+      .section-heading p {
+        font-size: 1rem;
+      }
+
+      .projects-grid {
+        gap: 25px;
+      }
+
+      .project-card {
+        padding: 30px;
+        border-radius: 8px;
+      }
+
+      .project-card h3 {
+        font-size: 1.5rem;
+      }
+
+      .project-card > p {
+        font-size: 0.95rem;
+        line-height: 1.6;
+      }
+
+      .project-progress {
+        padding: 20px;
+      }
+
+      .project-progress p:first-child {
+        font-size: 1rem;
+      }
+
+      .research-section {
+        padding: 50px 15px;
+      }
+
+      .research-section h2 {
+        font-size: 1.7rem;
+      }
+
+      .research-section > p {
+        font-size: 1rem;
+      }
+
+      .research-item p {
+        font-size: 0.95rem;
+      }
+
+      .cta-box {
+        padding: 40px 25px;
+        margin: 50px 15px;
+      }
+
+      .cta-box h2 {
+        font-size: 1.7rem;
+      }
+
+      .cta-box p {
+        font-size: 1rem;
+      }
+
+      .btn {
+        padding: 11px 25px;
+        font-size: 0.9rem;
+      }
+    }
+  </style>
 </head>
 
 <body>
@@ -39,36 +509,36 @@
     <div class="project-card">
       <div class="project-header">
         <div class="project-icon">🦯</div>
-        <span class="status-badge status-production">MVP Stage</span>
+        <span class="status-badge status-production"><i class="fas fa-rocket"></i> MVP Stage</span>
       </div>
       <h3>Sightra</h3>
       <p>An integrated navigation ecosystem combining a smart cane, web platform, and voice interaction to support safe movement and spatial awareness.</p>
       <div class="project-progress">
-        <p style="font-weight:600;">Current Focus</p>
-        <p style="color:#666;">Voice command reliability, real-time obstacle detection, and low-bandwidth connectivity.</p>
+        <p>Current Focus</p>
+        <p>Voice command reliability, real-time obstacle detection, and low-bandwidth connectivity.</p>
       </div>
       <div class="tech-tags">
-        <span class="tech-tag">IoT Sensors</span>
-        <span class="tech-tag">Edge AI</span>
-        <span class="tech-tag">Voice UX</span>
+        <span class="tech-tag"><i class="fas fa-wifi"></i> IoT Sensors</span>
+        <span class="tech-tag"><i class="fas fa-brain"></i> Edge AI</span>
+        <span class="tech-tag"><i class="fas fa-microphone"></i> Voice UX</span>
       </div>
     </div>
 
     <div class="project-card">
       <div class="project-header">
         <div class="project-icon">🗣️</div>
-        <span class="status-badge status-development">Active Development</span>
+        <span class="status-badge status-development"><i class="fas fa-code"></i> Active Development</span>
       </div>
       <h3>Theravoo</h3>
       <p>Assistive speech understanding that helps people with speech impairments be understood in conversations, care settings, and digital platforms.</p>
       <div class="project-progress">
-        <p style="font-weight:600;">Current Focus</p>
-        <p style="color:#666;">Adaptive AI models to interpret non-standard speech patterns while respecting privacy and autonomy.</p>
+        <p>Current Focus</p>
+        <p>Adaptive AI models to interpret non-standard speech patterns while respecting privacy and autonomy.</p>
       </div>
       <div class="tech-tags">
-        <span class="tech-tag">Adaptive AI</span>
-        <span class="tech-tag">Pattern Recognition</span>
-        <span class="tech-tag">Privacy Tech</span>
+        <span class="tech-tag"><i class="fas fa-network-wired"></i> Adaptive AI</span>
+        <span class="tech-tag"><i class="fas fa-chart-line"></i> Pattern Recognition</span>
+        <span class="tech-tag"><i class="fas fa-shield-alt"></i> Privacy Tech</span>
       </div>
     </div>
 
@@ -77,34 +547,32 @@
 
 <section class="research-section">
   <div class="container">
-    <h2 style="text-align:center;">Product Enhancement Research</h2>
-    <p style="text-align:center;color:#666;margin-bottom:3rem;">
-      Continuous exploration to strengthen reliability, safety, and real-world usability across our assistive suite.
-    </p>
+    <h2><i class="fas fa-flask-vial"></i> Product Enhancement Research</h2>
+    <p style="color: white;">Continuous exploration to strengthen reliability, safety, and real-world usability across our assistive suite.</p>
 
     <div class="research-grid">
-      <div class="research-item"><div class="research-dot"></div><p>Improved haptic feedback patterns</p></div>
-      <div class="research-item"><div class="research-dot"></div><p>Non-standard speech dataset expansion</p></div>
-      <div class="research-item"><div class="research-dot"></div><p>Context-aware route guidance</p></div>
-      <div class="research-item"><div class="research-dot"></div><p>Offline-first processing logic</p></div>
-      <div class="research-item"><div class="research-dot"></div><p>Public infrastructure mapping</p></div>
-      <div class="research-item"><div class="research-dot"></div><p>Emergency assistance workflows</p></div>
+      <div class="research-item"><div class="research-dot"></div><p><i class="fas fa-hand-paper"></i> Improved haptic feedback patterns</p></div>
+      <div class="research-item"><div class="research-dot"></div><p><i class="fas fa-database"></i> Non-standard speech dataset expansion</p></div>
+      <div class="research-item"><div class="research-dot"></div><p><i class="fas fa-map"></i> Context-aware route guidance</p></div>
+      <div class="research-item"><div class="research-dot"></div><p><i class="fas fa-bolt"></i> Offline-first processing logic</p></div>
+      <div class="research-item"><div class="research-dot"></div><p><i class="fas fa-building"></i> Public infrastructure mapping</p></div>
+      <div class="research-item"><div class="research-dot"></div><p><i class="fas fa-phone-alt"></i> Emergency assistance workflows</p></div>
     </div>
   </div>
 </section>
 
 <section class="container">
   <div class="cta-box">
-    <h2>Partner With Us</h2>
-    <p style="font-size:1.1rem;color:#666;margin-top:1rem;">
+    <h2><i class="fas fa-handshake"></i> Partner With Us</h2>
+    <p>
       We collaborate with disability networks, research institutions, and accessibility advocates to bring Sightra and Theravoo into real-world use.
     </p>
-    <a href="/contact/" class="btn">Get in Touch</a>
+    <a href="/" class="btn"><i class="fas fa-envelope"></i> Get in Touch</a>
   </div>
 </section>
 
 <footer>
-  <p>&copy; 2026 Sauti Yetu. Building Assistive Technology for Independent Living.</p>
+  <p>&copy; {% now "Y" %} Sauti Yetu. Building Assistive Technology for Independent Living.</p>
 </footer>
 
 <script>
