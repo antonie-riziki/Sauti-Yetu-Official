@@ -100,6 +100,8 @@ def technology(request):
 def about(request): 
     # Ensure this matches the renamed file in your templates folder
     return render(request, 'about_us.html')
+
+
 @csrf_exempt
 def chatbot_response(request):
     if request.method == 'POST':
